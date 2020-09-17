@@ -1,8 +1,8 @@
-# Project-1 (Name to be Decided)
+# Evil Trivia
 
 ## Purpose
 
-A website that ..........
+A website for a trivia game that insults you when you get a wrong answer.
 
 ## Built With
 
