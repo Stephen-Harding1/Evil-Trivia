@@ -5,9 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../Project-1/assets/css/style.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css" integrity="sha512-ADrqa2PY1TZtb/MoLZIZu/Z/LlPaWQeDMBV73EMwjGam43/JJ5fqW38Rq8LJOVGCDfrJeOMS3Q/wRUVzW5DkjQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma-rtl.css" integrity="sha512-mP0kn0Fy+Dx+jCC3K4yEJufzSHFhszy1LOE4YvUOuFt1xwELuJI9W55FbKUaLswXc18ptZH17I3b40fn2jBbhw==" crossorigin="anonymous" />
+
+</head>   
 <body>
-    
+    <header class="navbar is-primary">
+        <div class="columns">
+            <div class="column">
+                <h1>Restart</h1>
+            </div>
+            <div class="column">
+                <h1>Current Score</h1>
+            </div>
+            <div class="column">
+                <h1>View Highscore</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">       
+            <div class="card">
+                <div class="card-header has-background-primary">
+                    <h1 class="card-header-title is-centered has-text-white">
+                        Category
+                    </h1>
+                </div>
+                    
+                <div class="card-content">
+                    <p class="title">
+                            Question Here?
+                    </p>
+                </div>
+
+                <input class="input" type="text" placeholder="Text input">
+
+                <footer class="card-footer">
+                    <div class="buttons">
+                        <button class="button is-primary is-medium">
+                            Submit Answer Button
+                        </button>
+                          
+                        <button class="button is-primary is-medium">
+                            Skip Question
+                        </button>
+                          
+                        <button class="button is-primary is-medium">
+                            <span class="category">
+                                Clue
+                            </span>
+                        </button>
+                    </div>
+                </footer>  
+            </div>
+    </section>
+
+
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
     <script src="../Project-1/assets/js/script.jss"></script>
 </body>
 </html>
+
