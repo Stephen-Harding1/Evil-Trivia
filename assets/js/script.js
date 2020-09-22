@@ -38,7 +38,7 @@ const loadQuestion = () => {
       }
       answer = questionData[0].answer;
       clue.textContent = "Category: " + questionData[0].category.title;
-      console.log(answer);
+      console.log("Answer: " + answer);
     } else {
       console.log("ERROR");
     }
@@ -66,7 +66,7 @@ const submit = () => {
     // insult loaded over question
     loadInsult();
     document.getElementById("insult").textContent = insult;
-
+    // correct answer display
     document.getElementById("answer").textContent =
       "The correct answer is: " + answer;
     document.getElementById("guess").disabled = true;
@@ -74,6 +74,11 @@ const submit = () => {
     document.getElementById("score").textContent =
       "Score: " + score + " Misses: " + wrongAnswers;
   }
+};
+
+const restartPage = () => {
+  location.reload();
+  return false;
 };
 
 loadInsult();
