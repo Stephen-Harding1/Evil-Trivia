@@ -40,12 +40,11 @@
             Restart
           </a>
     
-          <a class="navbar-item" role="button" >
-            View Highscore
+          <a class="navbar-item" id="highscore" >
           </a>
 
           <a class="navbar-item" id="score">
-            Current Score
+            Score: 0 Misses: 0
           </a>
     </header>     
     
@@ -63,9 +62,6 @@
         <div class="card-content">
           <p class="title" id="question">Question Here?</p>
           <hr />
-          <p class="title" id="insult"></p>
-          <hr />
-          <p id="answer"></p>
         </div>
 
         <input class="input" type="text" placeholder="Text input" id="guess" />
@@ -79,6 +75,29 @@
               Skip Question
             </button>
           </div>
+          <div class="modal" id="gameOverModel">
+            <div class="modal-background"></div>
+                <div class="modal-content information">
+                    <div class="box">
+                    <p class="title">GAME OVER</p>
+                    <p id="modelHighscore"></p>
+                    <button class="button is-danger" onclick="restartPage()" id="modelRestart">Restart?</button>
+                </div>
+                </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+        <div class="modal" id="wrongAnswerModel">
+            <div class="modal-background"></div>
+                <div class="modal-content information">
+                    <div class="box">
+                    <p class="content is-medium">Wrong Answer!</p>
+                    <p class="content is-medium" id="answer"></p>
+                    <p class="title" id="insult"></p>
+                    <button class="button is-danger" onclick="next2()" id="wrongAnswerModelButton">Next Question </button>
+                </div>
+                </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
         </section>
       </div>
     </section>
