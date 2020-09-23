@@ -4,9 +4,9 @@ var answerButton = document.getElementById("answer");
 var clue = document.getElementById("clue");
 var highscoreStorage = window.localStorage;
 if (highscoreStorage.getItem('highscore') === null){
-  highscoreStorage.setItem('highscore', 0);
- } 
- document.getElementById("highscore").textContent = "Highscore: " + highscoreStorage.getItem('highscore');
+ highscoreStorage.setItem('highscore', 0);
+} 
+document.getElementById("highscore").textContent = "Highscore: " + highscoreStorage.getItem('highscore');
 var answer;
 var wrongAnswers = 0;
 var score = 0;
@@ -42,7 +42,7 @@ const loadQuestion = () => {
         loadQuestion();
       }
       answer = questionData[0].answer;
-      clue.textContent = "Clue: " + questionData[0].category.title;
+      clue.textContent = "Category: " + questionData[0].category.title;
       console.log("Answer: " + answer);
     } else {
       console.log("ERROR");
@@ -55,25 +55,11 @@ const next = () => {
   document.getElementById("guess").disabled = false;
   document.getElementById("answer").textContent = "";
   document.getElementById("guess").value = "";
-  document.getElementById("insult").textContent = "";
-};
-const next2 = () => {
-  loadQuestion();
-  document.getElementById("guess").disabled = false;
-  document.getElementById("answer").textContent = "";
-  document.getElementById("guess").value = "";
-  document.getElementById("wrongAnswerModel").style.display = 'none';
 };
 
 const submit = () => {
-  // fix case sensitive and foreign characters
-  answer = answer.toLowerCase();
-  answer = answer.replace("<i>", "");
-  answer = answer.replace("</i>", "");
-  guess = document.getElementById("guess").value;
-
   //Correct answer
-  if (guess.toLowerCase() == answer) {
+  if (document.getElementById("guess").value == answer) {
     document.getElementById("guess").disabled = true;
     score = score + 1;
     document.getElementById("score").textContent =
@@ -82,7 +68,7 @@ const submit = () => {
   //Wrong answer
   else {
     // insult loaded over question
-    document.getElementById("wrongAnswerModel").style.display = "block";
+    loadInsult();
     document.getElementById("insult").textContent = insult;
     // correct answer display
     document.getElementById("answer").textContent =
@@ -91,10 +77,9 @@ const submit = () => {
     wrongAnswers = wrongAnswers + 1;
     document.getElementById("score").textContent =
       "Score: " + score + " Misses: " + wrongAnswers;
-    if (wrongAnswers > 3) {
-      gameOver();
-    }
-    loadInsult();
+      if(wrongAnswers > 3){
+        gameOver();
+      }
   }
 };
 
@@ -108,7 +93,7 @@ const gameOver = () => {
  if(highscoreStorage.getItem('highscore') < score){
    highscoreStorage.setItem('highscore', score);
    document.getElementById("modelHighscoreNot").textContent = "Congratulations! New Highscore!"
-}
+ }
 }
 
 loadInsult();
