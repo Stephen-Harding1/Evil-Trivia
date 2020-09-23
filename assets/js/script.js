@@ -63,6 +63,7 @@ const next2 = () => {
   document.getElementById("answer").textContent = "";
   document.getElementById("guess").value = "";
   document.getElementById("wrongAnswerModel").style.display = 'none';
+  document.getElementById("correctAnswerModel").style.display = 'none';
 };
 
 const submit = () => {
@@ -74,6 +75,7 @@ const submit = () => {
 
   //Correct answer
   if (guess.toLowerCase() == answer) {
+    document.getElementById("correctAnswerModel").style.display = "block";
     document.getElementById("guess").disabled = true;
     score = score + 1;
     document.getElementById("score").textContent =
@@ -107,7 +109,7 @@ const gameOver = () => {
   document.getElementById("modelHighscore").textContent = "Your Score was " + score;
  if(highscoreStorage.getItem('highscore') < score){
    highscoreStorage.setItem('highscore', score);
-   document.getElementById("modelHighscoreNot").textContent = "Congratulations! New Highscore!"
+   document.getElementById("modelHighscoreNote").textContent = "Congratulations! New Highscore!";
 }
 }
 

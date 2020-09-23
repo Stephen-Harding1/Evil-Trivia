@@ -80,7 +80,8 @@
                 <div class="modal-content information">
                     <div class="box">
                     <p class="title">GAME OVER</p>
-                    <p id="modelHighscore"></p>
+                    <p class="content is-medium" id="modelHighscore"></p>
+                    <p class="content is-medium" id="modelHighscoreNote"></p>
                     <button class="button is-danger" onclick="restartPage()" id="modelRestart">Restart?</button>
                 </div>
                 </div>
@@ -93,6 +94,16 @@
                     <p class="title">Wrong Answer!</p>
                     <p class="content is-medium" id="answer"></p>
                     <p class="title" id="insult"></p>
+                    <button class="button is-danger" onclick="next2()" id="wrongAnswerModelButton">Next Question </button>
+                </div>
+                </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+        <div class="modal" id="correctAnswerModel">
+            <div class="modal-background"></div>
+                <div class="modal-content information">
+                    <div class="box">
+                    <p class="title">Correct!</p>
                     <button class="button is-danger" onclick="next2()" id="wrongAnswerModelButton">Next Question </button>
                 </div>
                 </div>
