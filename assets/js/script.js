@@ -7,7 +7,6 @@ var wrongAnswers = 0;
 var score = 0;
 var insult;
 
-
 const loadInsult = () => {
   let request = new XMLHttpRequest();
   request.open(
@@ -78,8 +77,6 @@ const submit = () => {
       "Score: " + score + " Misses: " + wrongAnswers;
   }
 };
-
-
 
 const restartPage = () => {
   location.reload();
