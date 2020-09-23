@@ -75,9 +75,9 @@ const submit = () => {
     wrongAnswers = wrongAnswers + 1;
     document.getElementById("score").textContent =
       "Score: " + score + " Misses: " + wrongAnswers;
-      if(wrongAnswers > 3){
-        gameOver();
-      }
+    if (wrongAnswers > 3) {
+      gameOver();
+    }
   }
 };
 
@@ -86,9 +86,10 @@ const restartPage = () => {
   return false;
 };
 const gameOver = () => {
-  document.getElementById("gameOverModel").style.display = 'block';
-  document.getElementById("modelHighscore").textContent = "Your Score was " + score;
-}
+  document.getElementById("gameOverModel").style.display = "block";
+  document.getElementById("modelHighscore").textContent =
+    "Your Score was " + score;
+};
 
 loadInsult();
 loadQuestion();
