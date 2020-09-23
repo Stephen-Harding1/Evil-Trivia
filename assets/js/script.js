@@ -50,7 +50,6 @@ const next = () => {
   document.getElementById("guess").disabled = false;
   document.getElementById("answer").textContent = "";
   document.getElementById("guess").value = "";
-  clue.textContent = "Clue: " + questionData[0].category.title;
 };
 
 const submit = () => {
@@ -73,6 +72,9 @@ const submit = () => {
     wrongAnswers = wrongAnswers + 1;
     document.getElementById("score").textContent =
       "Score: " + score + " Misses: " + wrongAnswers;
+      if(wrongAnswers > 3){
+        gameOver();
+      }
   }
 };
 
@@ -80,6 +82,10 @@ const restartPage = () => {
   location.reload();
   return false;
 };
+const gameOver = () => {
+  document.getElementById("gameOverModel").style.display = 'block';
+  document.getElementById("modelHighscore").textContent = "Your Score was " + score;
+}
 
 loadInsult();
 loadQuestion();

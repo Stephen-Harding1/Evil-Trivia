@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css" integrity="sha512-ADrqa2PY1TZtb/MoLZIZu/Z/LlPaWQeDMBV73EMwjGam43/JJ5fqW38Rq8LJOVGCDfrJeOMS3Q/wRUVzW5DkjQ==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma-rtl.css" integrity="sha512-mP0kn0Fy+Dx+jCC3K4yEJufzSHFhszy1LOE4YvUOuFt1xwELuJI9W55FbKUaLswXc18ptZH17I3b40fn2jBbhw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css"
+        integrity="sha512-ADrqa2PY1TZtb/MoLZIZu/Z/LlPaWQeDMBV73EMwjGam43/JJ5fqW38Rq8LJOVGCDfrJeOMS3Q/wRUVzW5DkjQ=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma-rtl.css"
+        integrity="sha512-mP0kn0Fy+Dx+jCC3K4yEJufzSHFhszy1LOE4YvUOuFt1xwELuJI9W55FbKUaLswXc18ptZH17I3b40fn2jBbhw=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/css/style.css"/>
 
-</head>   
+</head>
+
 <body>
     <header class="navbar is-primary">
         <div class="columns">
             <button class="button is-primary is-medium" onclick="restartPage()">
                 <h1>Restart</h1>
             </button>
-            
+
             <div class="column">
                 <h1 id="score">Current Score</h1>
             </div>
@@ -24,44 +31,54 @@
         </div>
     </header>
 
-    <section class="section">       
-            <div class="card">
-                <div class="card-header has-background-primary">
-                    <h1 class="card-header-title is-centered has-text-white" id="clue">
-                        Category
-                    </h1>
-                </div>
-                    
-                <div class="card-content">
-                    <p class="title" id="question">
-                            Question Here?
-                    </p>
-                    <hr>
-                    <p class="title" id="insult"></p>
-                    <hr>
-                    <p id="answer"></p>
-                </div>
-
-                <input class="input" type="text" placeholder="Text input" id="guess">
-                <footer class="card-footer">
-                    <div class="buttons">
-                        <button class="button is-primary is-medium" onclick="submit()">
-                            Submit Answer Button
-                        </button>
-                          
-                        <button class="button is-primary is-medium" onclick="next()">
-                            Skip Question
-                        </button>
-                          
-                        <button class="button is-primary is-medium">
-                            <span class="category">
-                                Clue
-                            </span>
-                        </button>
-                        
-                    </div>
-                </footer>  
+    <section class="section">
+        <div class="card">
+            <div class="card-header has-background-primary">
+                <h1 class="card-header-title is-centered has-text-white" id="clue">
+                    Category
+                </h1>
             </div>
+
+            <div class="card-content">
+                <p class="title" id="question">
+                    Question Here?
+                </p>
+                <hr>
+                <p class="title" id="insult"></p>
+                <hr>
+                <p id="answer"></p>
+            </div>
+            <div class="modal" id="gameOverModel">
+                <div class="modal-background"></div>
+                    <div class="modal-content information">
+                        <div class="box">
+                        <p class="title">GAME OVER</p>
+                        <p id="modelHighscore"></p>
+                        <button class="button is-primary" onclick="restartPage()" id="modelRestart">Restart?</button>
+                    </div>
+                    </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+            <input class="input" type="text" placeholder="Text input" id="guess">
+            <footer class="card-footer">
+                <div class="buttons">
+                    <button class="button is-primary is-medium" onclick="submit()">
+                        Submit Answer Button
+                    </button>
+
+                    <button class="button is-primary is-medium" onclick="next()">
+                        Skip Question
+                    </button>
+
+                    <button class="button is-primary is-medium">
+                        <span class="category">
+                            Clue
+                        </span>
+                    </button>
+
+                </div>
+            </footer>
+        </div>
     </section>
 
 
