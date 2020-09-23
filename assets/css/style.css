@@ -12,3 +12,7 @@ footer {
     text-decoration: none;
     color: white;
   }
+
+  header {
+    font-family: 'Nosifer', cursive;
+  }

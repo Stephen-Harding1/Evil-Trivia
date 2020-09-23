@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>EviL Trivia</title>
+    
+
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css"
@@ -17,22 +21,36 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../Evil-Trivia/assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header class="navbar is-danger">
-      <div class="columns">
-        <button class="button is-danger is-medium" onclick="restartPage()">
-          <h1>Restart</h1>
-        </button>
 
-        <div class="column">
-          <h1 id="score">Current Score</h1>
-        </div>
-        <div class="column">
-          <h1>View Highscore</h1>
-        </div>
+    <header>
+    <nav class="navbar is-danger" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-black has-text-weight-bold is-size-4" >
+          <img src="./android-chrome-192x192.png" width="28" height="28"> 
+          &nbsp; Evil-Trivia
+          </a>
       </div>
-    </header>
+    
+      <div id="navbarBasicExample" class="navbar-menu is-size-7" >
+        <div class="navbar-start">
+          <a class="navbar-item" role="button" onclick="restartPage()">
+            Restart
+          </a>
+    
+          <a class="navbar-item" role="button" >
+            View Highscore
+          </a>
+
+          <a class="navbar-item" id="score">
+            Current Score
+          </a>
+    </header>     
+    
+
+
 
     <section class="section">
       <div class="card">
@@ -85,5 +103,6 @@
       src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
     ></script>
     <script src="assets/js/script.js"></script>
+    
   </body>
 </html>
