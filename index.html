@@ -1,89 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-background-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EviL Trivia</title>
+    
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css"
-        integrity="sha512-ADrqa2PY1TZtb/MoLZIZu/Z/LlPaWQeDMBV73EMwjGam43/JJ5fqW38Rq8LJOVGCDfrJeOMS3Q/wRUVzW5DkjQ=="
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma-rtl.css"
-        integrity="sha512-mP0kn0Fy+Dx+jCC3K4yEJufzSHFhszy1LOE4YvUOuFt1xwELuJI9W55FbKUaLswXc18ptZH17I3b40fn2jBbhw=="
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/css/style.css"/>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css"
+      integrity="sha512-ADrqa2PY1TZtb/MoLZIZu/Z/LlPaWQeDMBV73EMwjGam43/JJ5fqW38Rq8LJOVGCDfrJeOMS3Q/wRUVzW5DkjQ=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma-rtl.css"
+      integrity="sha512-mP0kn0Fy+Dx+jCC3K4yEJufzSHFhszy1LOE4YvUOuFt1xwELuJI9W55FbKUaLswXc18ptZH17I3b40fn2jBbhw=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../Evil-Trivia/assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+  </head>
+  <body>
 
-<body>
-    <header class="navbar is-primary">
-        <div class="columns">
-            <button class="button is-primary is-medium" onclick="restartPage()">
-                <h1>Restart</h1>
-            </button>
+    <header>
+    <nav class="navbar is-danger" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-black has-text-weight-bold is-size-4" >
+          <img src="./android-chrome-192x192.png" width="28" height="28"> 
+          &nbsp; Evil-Trivia
+          </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu is-size-7" >
+        <div class="navbar-start">
+          <a class="navbar-item" role="button" onclick="restartPage()">
+            Restart
+          </a>
+    
+          <a class="navbar-item" role="button" >
+            View Highscore
+          </a>
 
-            <div class="column">
-                <h1 id="score">Current Score</h1>
-            </div>
-            <div class="column">
-                <h1>View Highscore</h1>
-            </div>
-        </div>
-    </header>
+          <a class="navbar-item" id="score">
+            Current Score
+          </a>
+    </header>     
+    
+
+
 
     <section class="section">
-        <div class="card">
-            <div class="card-header has-background-primary">
-                <h1 class="card-header-title is-centered has-text-white" id="clue">
-                    Category
-                </h1>
-            </div>
-
-            <div class="card-content">
-                <p class="title" id="question">
-                    Question Here?
-                </p>
-                <hr>
-                <p class="title" id="insult"></p>
-                <hr>
-                <p id="answer"></p>
-            </div>
-            <div class="modal" id="gameOverModel">
-                <div class="modal-background"></div>
-                    <div class="modal-content information">
-                        <div class="box">
-                        <p class="title">GAME OVER</p>
-                        <p id="modelHighscore"></p>
-                        <button class="button is-primary" onclick="restartPage()" id="modelRestart">Restart?</button>
-                    </div>
-                    </div>
-                <button class="modal-close is-large" aria-label="close"></button>
-            </div>
-            <input class="input" type="text" placeholder="Text input" id="guess">
-            <footer class="card-footer py-3">
-                <div class="buttons">
-                    <button class="button is-primary is-medium" onclick="submit()">
-                        Submit Answer Button
-                    </button>
-
-                    <button class="button is-primary is-medium" onclick="next()">
-                        Skip Question
-                    </button>
-
-                    <button class="button is-primary is-medium">
-                        <span class="category">
-                            Clue
-                        </span>
-                    </button>
-
-                </div>
-            </footer>
+      <div class="card">
+        <div class="card-header has-background-danger">
+          <h1 class="card-header-title is-centered has-text-white" id="clue">
+            Category
+          </h1>
         </div>
+
+        <div class="card-content">
+          <p class="title" id="question">Question Here?</p>
+          <hr />
+          <p class="title" id="insult"></p>
+          <hr />
+          <p id="answer"></p>
+        </div>
+
+        <input class="input" type="text" placeholder="Text input" id="guess" />
+        <section class="box-footer py-3">
+          <div class="buttons">
+            <button class="button is-danger is-medium" onclick="submit()">
+              Submit Answer Button
+            </button>
+
+            <button class="button is-danger is-medium" onclick="next()">
+              Skip Question
+            </button>
+          </div>
+        </section>
+      </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="has-background-danger has-text-white py-2">
+      <h2>
+        ❤️ Made with love by
+        <a href="https://github.com/lucasmbarros" target="_blank">Lucas Barros</a>,
+        <a href="https://github.com/R0nG13" target="_blank">Ron Gould</a>, and
+        <a href="https://github.com/Stephen-Harding1" target="_blank">Stephen Harding</a>.
+      </h2>
+      <div></div>
+    </footer>
 
-    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
+    ></script>
     <script src="assets/js/script.js"></script>
-</body>
-
+    
+  </body>
 </html>

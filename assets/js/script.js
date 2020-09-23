@@ -37,7 +37,7 @@ const loadQuestion = () => {
         loadQuestion();
       }
       answer = questionData[0].answer;
-      clue.textContent = "Category: " + questionData[0].category.title;
+      clue.textContent = "Clue: " + questionData[0].category.title;
       console.log("Answer: " + answer);
     } else {
       console.log("ERROR");
@@ -50,9 +50,12 @@ const next = () => {
   document.getElementById("guess").disabled = false;
   document.getElementById("answer").textContent = "";
   document.getElementById("guess").value = "";
+  document.getElementById("insult").textContent = "";
+  clue.textContent = "Clue: " + questionData[0].category.title;
 };
 
 const submit = () => {
+  answer = answer.toLowerCase();
   //Correct answer
   if (document.getElementById("guess").value == answer) {
     document.getElementById("guess").disabled = true;
