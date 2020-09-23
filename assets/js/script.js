@@ -37,7 +37,7 @@ const loadQuestion = () => {
         loadQuestion();
       }
       answer = questionData[0].answer;
-      clue.textContent = "Category: " + questionData[0].category.title;
+      clue.textContent = "Clue: " + questionData[0].category.title;
       console.log("Answer: " + answer);
     } else {
       console.log("ERROR");
