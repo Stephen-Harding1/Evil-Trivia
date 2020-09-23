@@ -7,6 +7,7 @@ var wrongAnswers = 0;
 var score = 0;
 var insult;
 
+
 const loadInsult = () => {
   let request = new XMLHttpRequest();
   request.open(
@@ -54,6 +55,7 @@ const next = () => {
 };
 
 const submit = () => {
+  answer = answer.toLowerCase();
   //Correct answer
   if (document.getElementById("guess").value == answer) {
     document.getElementById("guess").disabled = true;
@@ -75,6 +77,8 @@ const submit = () => {
       "Score: " + score + " Misses: " + wrongAnswers;
   }
 };
+
+
 
 const restartPage = () => {
   location.reload();
