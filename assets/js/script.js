@@ -55,9 +55,14 @@ const next = () => {
 };
 
 const submit = () => {
+  // fix case sensitive and foreign characters
   answer = answer.toLowerCase();
+  answer = answer.replace("<i>", "");
+  answer = answer.replace("</i>", "");
+  guess = document.getElementById("guess").value;
+
   //Correct answer
-  if (document.getElementById("guess").value == answer) {
+  if (guess.toLowerCase() == answer) {
     document.getElementById("guess").disabled = true;
     score = score + 1;
     document.getElementById("score").textContent =
