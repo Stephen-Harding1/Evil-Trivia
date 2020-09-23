@@ -51,6 +51,7 @@ const next = () => {
   document.getElementById("guess").disabled = false;
   document.getElementById("answer").textContent = "";
   document.getElementById("guess").value = "";
+  document.getElementById("insult").textContent = "";
   clue.textContent = "Clue: " + questionData[0].category.title;
 };
 
