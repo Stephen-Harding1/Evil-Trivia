@@ -32,7 +32,7 @@ const loadInsult = () => {
 
 const loadQuestion = () => {
   let request = new XMLHttpRequest();
-  request.open("GET", "http://jservice.io/api/random");
+  request.open("GET", "https://jservice.io/api/random");
   request.send();
   request.onload = () => {
     if (request.status === 200) {
