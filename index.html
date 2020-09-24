@@ -33,23 +33,23 @@
           &nbsp; Evil-Trivia
           </a>
       
-          <span class="navbar-burger burger" data-target="navMenu">
+          <div class="navbar-burger burger" data-target="navMenu">
             <span></span>
             <span></span>
             <span></span>
-          </span>
+          </div>
         </div>
     
       <div id="navMenu" class="navbar-menu is-size-7" >
         <div class="navbar-start">
-          <a href="#" class="navbar-item is-active" role="button" onclick="restartPage()">
+          <a href="#" class="navbar-item" role="button" onclick="restartPage()">
             Restart
           </a>
     
           <a href="#" class="navbar-item" id="highscore" >
           </a>
 
-          <a href="#" class="navbar-item is-active" id="score">
+          <a href="#" class="navbar-item" id="score">
             Score: 0 Misses: 0
           </a>
     </header>     
@@ -138,7 +138,7 @@
     <script src="assets/js/script.js"></script>
     <script type="text/javascript">
       (function() {
-        var burger = document.querySelector('.burger');
+        var burger = document.querySelector('.navbar-burger');
         var nav = document.querySelector('#'+burger.dataset.target);
 
         burger.addEventListener('click',function() {
