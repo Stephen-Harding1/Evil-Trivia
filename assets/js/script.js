@@ -13,6 +13,7 @@ var wrongAnswers = 0;
 var score = 0;
 var insult;
 
+// Evil Insult API
 const loadInsult = () => {
   let request = new XMLHttpRequest();
   request.open(
@@ -30,6 +31,7 @@ const loadInsult = () => {
   };
 };
 
+// jService API
 const loadQuestion = () => {
   let request = new XMLHttpRequest();
   request.open(
@@ -103,10 +105,12 @@ const submit = () => {
   }
 };
 
+// Restart Function to page
 const restartPage = () => {
   location.reload();
   return false;
 };
+
 const gameOver = () => {
   document.getElementById("gameOverModel").style.display = "block";
   document.getElementById("modelHighscore").textContent =
