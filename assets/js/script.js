@@ -23,7 +23,6 @@ const loadInsult = () => {
     if (request.status === 200) {
       const insultData = JSON.parse(request.response);
       insult = insultData.insult;
-      console.log(insultData.insult);
     } else {
       console.log("ERROR");
     }
