@@ -3,10 +3,11 @@ var question = document.getElementById("question");
 var answerButton = document.getElementById("answer");
 var clue = document.getElementById("clue");
 var highscoreStorage = window.localStorage;
-if (highscoreStorage.getItem('highscore') === null){
-  highscoreStorage.setItem('highscore', 0);
- } 
- document.getElementById("highscore").textContent = "Highscore: " + highscoreStorage.getItem('highscore');
+if (highscoreStorage.getItem("highscore") === null) {
+  highscoreStorage.setItem("highscore", 0);
+}
+document.getElementById("highscore").textContent =
+  "Highscore: " + highscoreStorage.getItem("highscore");
 var answer;
 var wrongAnswers = 0;
 var score = 0;
@@ -31,7 +32,10 @@ const loadInsult = () => {
 
 const loadQuestion = () => {
   let request = new XMLHttpRequest();
-  request.open("GET", "https://cors-anywhere.herokuapp.com/https://jservice.io/api/random");
+  request.open(
+    "GET",
+    "https://cors-anywhere.herokuapp.com/https://jservice.io/api/random"
+  );
   request.send();
   request.onload = () => {
     if (request.status === 200) {
@@ -61,8 +65,8 @@ const next2 = () => {
   document.getElementById("guess").disabled = false;
   document.getElementById("answer").textContent = "";
   document.getElementById("guess").value = "";
-  document.getElementById("wrongAnswerModel").style.display = 'none';
-  document.getElementById("correctAnswerModel").style.display = 'none';
+  document.getElementById("wrongAnswerModel").style.display = "none";
+  document.getElementById("correctAnswerModel").style.display = "none";
 };
 
 const submit = () => {
@@ -104,13 +108,15 @@ const restartPage = () => {
   return false;
 };
 const gameOver = () => {
-  document.getElementById("gameOverModel").style.display = 'block';
-  document.getElementById("modelHighscore").textContent = "Your Score was " + score;
- if(highscoreStorage.getItem('highscore') < score){
-   highscoreStorage.setItem('highscore', score);
-   document.getElementById("modelHighscoreNote").textContent = "Congratulations! New Highscore!";
-}
-}
+  document.getElementById("gameOverModel").style.display = "block";
+  document.getElementById("modelHighscore").textContent =
+    "Your Score was " + score;
+  if (highscoreStorage.getItem("highscore") < score) {
+    highscoreStorage.setItem("highscore", score);
+    document.getElementById("modelHighscoreNote").textContent =
+      "Congratulations! New Highscore!";
+  }
+};
 
 loadInsult();
 loadQuestion();

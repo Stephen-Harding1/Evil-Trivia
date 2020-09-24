@@ -19,8 +19,9 @@ https://Stephen-Harding1.github.io/Evil-Trivia/
 Made with ❤️ by Lucas Barros, Stephen Harding and Ron Gould
 
 # Desktop Version
+
 ![Evil Trivia Desktop](assets/images/screenshot.png)
 
-
 # Mobile Version
+
 ![Evil Trivia Mobile](assets/images/mobile-screenshot.png)
